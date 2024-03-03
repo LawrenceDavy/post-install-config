@@ -1,5 +1,3 @@
-![image](https://github.com/LawrenceDavy/post-install-config/assets/24421979/aa0d1fa7-5af7-43f7-983c-90ea480fda05)
-
-![image](https://github.com/LawrenceDavy/post-install-config/assets/24421979/fa3d42d0-c32f-41cb-b2d0-7dd9a451e7f8)
+![image](https://github.com/LawrenceDavy/post-install-config/assets/24421979/f48c50e0-dbe9-497b-84d9-78cff5350739)
 
 ![image](https://github.com/LawrenceDavy/post-install-config/assets/24421979/d0a03cce-bbd4-4428-bc62-bfe8ee5102d4)

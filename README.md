@@ -92,7 +92,6 @@ Help Topics ensure Efficient Ticket Categorization. They serve as the compass in
    
 <hr>
 <br>
-<br>
 
-Contine to part 3 for Helpdesk Ticket Lifecycle example.
+Continue to <a href="https://github.com/LawrenceDavy/ticket-lifecycle">Part 3</a> for Post-Installation Configuration
 

@@ -3,6 +3,10 @@
 <br>
 <br>
 
+Note: Make sure you have logged in with your admin credentials before we continue
+
+<hr>
+
 ![image](https://github.com/LawrenceDavy/post-install-config/assets/24421979/f48c50e0-dbe9-497b-84d9-78cff5350739)
 - Configure Roles
   - Admin Panel --> Agents --> Roles

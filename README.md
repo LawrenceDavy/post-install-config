@@ -89,4 +89,10 @@ Help Topics ensure Efficient Ticket Categorization. They serve as the compass in
     - Personal Computer Issues
     - Equipment Request
     - Password Reset
+   
+<hr>
+<br>
+<br>
+
+Contine to part 3 for Helpdesk Ticket Lifecycle example.
 

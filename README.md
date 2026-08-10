@@ -1,114 +1,168 @@
+# osTicket – Post-Installation Configuration (Part 2)
+
+Independent configuration of roles, departments, teams, agents, users, SLAs and help topics in osTicket after the base installation.
+
+## What was done
+- Configured custom Roles with appropriate permission sets
+- Created Departments (including a System Administrators department with 24/7 schedule)
+- Created Teams (Level I Support and Level 2 Support)
+- Configured user registration settings
+- Added Agents (staff) and end Users (customers)
+- Defined Service Level Agreements (SEV-A, SEV-B, SEV-C) with different response targets and schedules
+- Created Help Topics for ticket categorisation
+- Documented the complete post-installation configuration process
+
+## Purpose
+Evidence of process discipline, documentation standards and systems ownership.  
+This remains an infrastructure / service-management project. Its value is proof of structured configuration and clear written documentation — not a data or analytics project.
+
+## Tools & technologies used
+- Microsoft Azure (Virtual Machines)
+- Windows 10 (21H2)
+- Internet Information Services (IIS)
+- osTicket (admin panel)
+- Remote Desktop
+
+## AI assistance
+None used for the core configuration or primary documentation.  
+---
+
 <p align="center">
-<img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo"/>
+  <img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo" width="200"/>
 </p>
 
-<h1>osTicket - osTicket - System configuration</h1>
-This tutorial outlines the post-install configuration of the open-source help desk ticketing system osTicket.<br />
+# osTicket – System Configuration (Post-Install)
 
-<h2>Environments and Technologies Used</h2>
+This document covers the post-installation configuration of the open-source help-desk system osTicket.
 
-- Microsoft Azure (Virtual Machines/Compute)
-- Remote Desktop
-- Internet Information Services (IIS)
+**Prerequisites (Part 1):**  
+[https://github.com/LawrenceDavy/osticket-prereqs](https://github.com/LawrenceDavy/osticket-prereqs)
 
-<h2>Operating Systems Used </h2>
+**Part 3 (Ticket Lifecycle):**  
+[https://github.com/LawrenceDavy/ticket-lifecycle](https://github.com/LawrenceDavy/ticket-lifecycle)
 
-- Windows 10</b> (21H2)
+> **Note:** Log in with admin credentials before starting these steps.
 
-<h2>This part of the tutorial outlines the post-install configuration of the open-source help desk ticketing system osTicket.</h2>
+---
 
-<br>
-<br>
+## 1. Configure Roles
 
-Note: Make sure you have logged in with your admin credentials before we continue
+![Roles](https://github.com/LawrenceDavy/post-install-config/assets/24421979/f48c50e0-dbe9-497b-84d9-78cff5350739)
 
-<hr>
+Roles are sets of permissions matched to the responsibilities of different staff members.
 
-![image](https://github.com/LawrenceDavy/post-install-config/assets/24421979/f48c50e0-dbe9-497b-84d9-78cff5350739)
-- In helpdesk management, osTicket Roles play a pivotal role in streamlining operations. These roles are meticulously tailored sets of permissions, intricately woven to match the unique responsibilities of each employee.
-- Configure Roles
-  - Admin Panel --> Agents --> Roles
-  - Supreme Admin 
+- Go to **Admin Panel → Agents → Roles**
+- Create / configure the required roles (example: Supreme Admin)
 
-<hr>
-<br>
-<br>
+---
 
-![image](https://github.com/LawrenceDavy/post-install-config/assets/24421979/d0a03cce-bbd4-4428-bc62-bfe8ee5102d4)
-- Each department serves as a distinct hub for handling specific types of inquiries. Additionally, administrators have the flexibility to fine-tune settings for individual departments. These configurations ensure efficient ticket management and streamlined workflows.
--  Creat a System Administration Department and assign yourself the manager. Provide the department with full control of the ticketing system. Set the schedule to 24/7 to allow access during non-operation hours, for emergencies.
-- Configure Departments
-  - Admin Panel --> Agents --> Departments
-  - System Administrators 
+## 2. Configure Departments
 
-<hr>
-<br>
-<br>
+![Departments](https://github.com/LawrenceDavy/post-install-config/assets/24421979/d0a03cce-bbd4-4428-bc62-bfe8ee5102d4)
 
-![image](https://github.com/LawrenceDavy/post-install-config/assets/24421979/91b8033f-445c-4030-b0eb-945ba17f90d3)
-- Teams organizes helpdesk employees from various departments enabling them to address specific issues or users via Help Topics or Ticket Filters.
-- Configure Teams
-  - Admin Panel --> Agents --> Teams
-    - Level I Support
-    - Level 2 Support    
+Departments act as hubs for specific types of inquiries and can have their own settings.
 
-<hr>
-<br>
-<br>
+- Go to **Admin Panel → Agents → Departments**
+- Create a **System Administrators** department
+- Assign yourself as manager
+- Give the department full control of the ticketing system
+- Set the schedule to **24/7** so tickets can be handled outside normal hours for emergencies
 
-![image](https://github.com/LawrenceDavy/post-install-config/assets/24421979/b6beddd4-8e82-4c1b-8f08-1bdac56d4771)
-- Allow anyone to create tickets
-  - Admin Panel --> Settings --> User Settings
-  - Registration Required: Require registration and login to create tickets
-<hr>
-<br>
-<br>
+---
 
-![image](https://github.com/LawrenceDavy/post-install-config/assets/24421979/da9bde3c-1082-46d4-ac90-20c8cb75fef5)
-- osTicket Agents serve as the frontline responders, addressing each ticket of user inquiries, ensuring timely resolutions and unwavering support.
-- Configure Agents(Workers)
-  - Admin Panel --> Agents --> Add New
-    - Jane Jane
-    - John John 
-  
-<hr>
-<br>
-<br>
+## 3. Configure Teams
 
-![image](https://github.com/LawrenceDavy/post-install-config/assets/24421979/827baf44-938f-41f8-bde8-b9356f75cd42)
-- Helpdesk users are the organization's employees and/or customers who will be submitting tickets. Users can be guests or registered in osTicket. Registered users can login or use their email to track their ticket's progress and view submission history.
-- Configure Users(customers)
-  - Agent Panel --> Users --> Add New
-    - Karen K
-    - Ken Masters  
-<hr>
-<br>
-<br>
+![Teams](https://github.com/LawrenceDavy/post-install-config/assets/24421979/91b8033f-445c-4030-b0eb-945ba17f90d3)
 
-![image](https://github.com/LawrenceDavy/post-install-config/assets/24421979/0743ba13-0c03-4dd7-9631-b99be7824826)
-- Service Level Agreements (SLAs) define the expected resolution time for tickets. Severity determines these timelines, reflecting the impact on business operations.
-- In this example use service levels (severity) SEV-A, SEV-B, SEV-C with SEV-A being the most severe (impactful on business operations). For SEV-A I set a grace period for 1 hour, this indicates that the ticket must be closed within 1 hour of receving. I set the schedule to 24/7 allowing the ticket to be addressed after hours for emergencies.
-- Configure SLA
-  - Admin Panel --> Manage --> SLA
-    - Sev-A (1 hour, 24/7)
-    - Sev-B (4 hours, 24/7)
-    - Sev-C (8 hours, business hours)
+Teams group agents from different departments so they can handle specific issues or users (via Help Topics or Ticket Filters).
 
-<hr>
-<br>
-<br>
+- Go to **Admin Panel → Agents → Teams**
+- Create:
+  - Level I Support
+  - Level 2 Support
 
-![image](https://github.com/LawrenceDavy/post-install-config/assets/24421979/b479c0db-9c08-4e34-a8f0-95e2baeb0dd7)
-Help Topics ensure Efficient Ticket Categorization. They serve as the compass in our ticketing system. They are used deftly guide tickets toward specific departments. Additionally, they influence ticket configurations, including SLAs and priority levels
-- Configure Help Topics
-  - Admin Panel -> Manage -> Help Topics
-    - Business Critical Outage
-    - Personal Computer Issues
-    - Equipment Request
-    - Password Reset
-   
-<hr>
-<br>
+---
 
-Continue to <a href="https://github.com/LawrenceDavy/ticket-lifecycle">Part 3</a> for Post-Installation Configuration
+## 4. User Registration Settings
 
+![User Settings](https://github.com/LawrenceDavy/post-install-config/assets/24421979/b6beddd4-8e82-4c1b-8f08-1bdac56d4771)
+
+- Go to **Admin Panel → Settings → Users**
+- Decide whether registration and login are required to create tickets (or allow guest submissions)
+
+---
+
+## 5. Configure Agents (Staff)
+
+![Agents](https://github.com/LawrenceDavy/post-install-config/assets/24421979/da9bde3c-1082-46d4-ac90-20c8cb75fef5)
+
+Agents are the staff who respond to tickets.
+
+- Go to **Admin Panel → Agents → Add New**
+- Create example agents:
+  - Jane Jane
+  - John John
+
+---
+
+## 6. Configure Users (Customers / End Users)
+
+![Users](https://github.com/LawrenceDavy/post-install-config/assets/24421979/827baf44-938f-41f8-bde8-b9356f75cd42)
+
+Users are the people who submit tickets. They can be guests or registered accounts.
+
+- Go to **Agent Panel → Users → Add New**
+- Create example users:
+  - Karen K
+  - Ken Masters
+
+---
+
+## 7. Configure Service Level Agreements (SLAs)
+
+![SLAs](https://github.com/LawrenceDavy/post-install-config/assets/24421979/0743ba13-0c03-4dd7-9631-b99be7824826)
+
+SLAs define expected resolution times based on severity / business impact.
+
+- Go to **Admin Panel → Manage → SLA**
+- Create the following example SLAs:
+
+| SLA     | Grace Period | Schedule       | Notes                          |
+|---------|--------------|----------------|--------------------------------|
+| SEV-A   | 1 hour       | 24/7           | Most severe / business critical |
+| SEV-B   | 4 hours      | 24/7           | High priority                  |
+| SEV-C   | 8 hours      | Business hours | Standard priority              |
+
+---
+
+## 8. Configure Help Topics
+
+![Help Topics](https://github.com/LawrenceDavy/post-install-config/assets/24421979/b479c0db-9c08-4e34-a8f0-95e2baeb0dd7)
+
+Help Topics categorise incoming tickets and can automatically route them to the correct department, apply an SLA, and set priority.
+
+- Go to **Admin Panel → Manage → Help Topics**
+- Create example topics:
+  - Business Critical Outage
+  - Personal Computer Issues
+  - Equipment Request
+  - Password Reset
+
+---
+
+## Next Steps
+
+Continue to **Part 3 – Ticket Lifecycle** to walk through creating, updating, escalating and closing tickets:  
+[https://github.com/LawrenceDavy/ticket-lifecycle](https://github.com/LawrenceDavy/ticket-lifecycle)
+
+---
+
+## Lessons Learned
+- Clear role and department design makes permission management much simpler later.
+- Setting a 24/7 schedule on the System Administrators department ensures emergency tickets can still be actioned outside normal hours.
+- Matching Help Topics to SLAs and departments creates predictable routing and response expectations.
+- Documenting each configuration step makes the system easier to hand over or rebuild.
+
+---
+
+**Last verified:** August 2026

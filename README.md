@@ -13,8 +13,7 @@ Independent configuration of roles, departments, teams, agents, users, SLAs and 
 - Documented the complete post-installation configuration process
 
 ## Purpose
-Evidence of process discipline, documentation standards and systems ownership.  
-This remains an infrastructure / service-management project. Its value is proof of structured configuration and clear written documentation — not a data or analytics project.
+A personal exercise to understand help-desk configuration and how tickets are categorised, assigned and prioritised. It is not commercial IT service-desk experience.
 
 ## Tools & technologies used
 - Microsoft Azure (Virtual Machines)
@@ -30,10 +29,6 @@ None used for the core configuration or primary documentation.
 <p align="center">
   <img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo" width="200"/>
 </p>
-
-# osTicket – System Configuration (Post-Install)
-
-This document covers the post-installation configuration of the open-source help-desk system osTicket.
 
 **Prerequisites (Part 1):**  
 [https://github.com/LawrenceDavy/osticket-prereqs](https://github.com/LawrenceDavy/osticket-prereqs)
